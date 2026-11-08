@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUMIÈRE Admin</title><meta name="robots" content="noindex">
+<style>
+:root{--bg:#0d0b0c;--s:#171314;--t:#fffaf4;--m:#d2c6bf;--g:#e3b583;--l:rgba(227,181,131,.3)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:400 15px/1.5 Inter,system-ui,sans-serif}
+h1,h2{font-family:Georgia,serif;font-weight:500;margin:0}.wrap{max-width:1200px;margin:0 auto;padding:24px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}h1{color:var(--g);letter-spacing:.2em}
+input,select,textarea,button{font:inherit;color:var(--t);background:transparent;border:1px solid var(--l);padding:9px 12px}
+button{cursor:pointer;color:var(--g)}button:hover{background:var(--g);color:#1a1210}
+input[type=number]{width:100px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:28px}
+.stat{background:var(--s);border:1px solid var(--l);padding:18px}.stat small{display:block;color:var(--m);text-transform:uppercase;letter-spacing:.15em;font-size:.7rem}.stat b{font:500 1.7rem Georgia,serif;color:var(--g)}
+.tabs{display:flex;gap:8px;margin-bottom:16px}.tabs button.on{background:var(--g);color:#1a1210}
+.box{overflow-x:auto;background:var(--s);border:1px solid var(--l)}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--l);vertical-align:top;font-size:.88rem}th{color:var(--m);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase}
+#login{max-width:360px;margin:15vh auto;padding:30px;background:var(--s);border:1px solid var(--l)}#login input{width:100%;margin:8px 0}
+form.add{display:flex;gap:8px;flex-wrap:wrap;padding:14px}[hidden]{display:none!important}
+</style></head><body>
+<div id="login"><h1 style="font-size:1.6rem;margin-bottom:14px">LUMIÈRE Admin</h1>
+<form id="lf"><input id="em" type="email" placeholder="Email" required autocomplete="username"><input id="pw" type="password" placeholder="Password" required autocomplete="current-password"><button style="width:100%;margin-top:8px">Sign in</button><p id="le" style="color:#f0bcc0;min-height:1.4em"></p></form></div>
+<div class="wrap" id="app" hidden>
+<header><h1>LUMIÈRE · ADMIN</h1><button id="out">Sign out</button></header>
+<div class="stats" id="stats"></div>
+<div class="tabs"><button id="t1" class="on">Orders</button><button id="t2">Products</button></div>
+<div id="v1" class="box"><table><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead><tbody id="orders"></tbody></table></div>
+<div id="v2" hidden>
+<form class="add box" id="af"><input id="an" placeholder="Product name" required><select id="ac"><option>skin</option><option>lips</option><option>face</option><option>eyes</option></select><input id="ap" type="number" min="0" placeholder="Price" required><input id="as" type="number" min="0" placeholder="Stock" required><input id="ad" placeholder="Description" style="flex:1;min-width:200px"><button>Add product</button></form>
+<div class="box" style="margin-top:14px"><table><thead><tr><th>Name</th><th>Category</th><th>Price (KES)</th><th>Stock</th><th></th></tr></thead><tbody id="products"></tbody></table></div></div>
+</div>
+<script src="admin.js"></script></body></html>
