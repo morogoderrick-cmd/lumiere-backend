@@ -21,4 +21,3 @@ async function stkPush({ phone, amount, orderNo }) {
   return r.data;
 }
 module.exports = { stkPush };
-
