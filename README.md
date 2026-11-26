@@ -11,6 +11,7 @@ npm run seed             # loads the 10 products and creates your admin login
 npm run dev              # http://localhost:4000  ·  admin: http://localhost:4000/admin
 ```
 
+
 You need MongoDB running locally, or a free MongoDB Atlas connection string in `MONGODB_URI`.
 
 ## What it does
