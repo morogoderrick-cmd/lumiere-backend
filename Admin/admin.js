@@ -3,7 +3,6 @@ let T = sessionStorage.getItem("t");
 const kes = n => "KES " + Number(n || 0).toLocaleString("en-KE");
 const ST = ["pending", "paid", "packed", "shipped", "delivered", "cancelled"];
 
-
 function el(tag, attrs = {}, kids = []) {
   const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
